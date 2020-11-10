@@ -1,9 +1,23 @@
-<?php 
+<?php
 
 class Dashboard extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->cek_status();
+        $this->CI = &get_instance();
+    }
     public function index()
     {
+        if ($this->CI->router->fetch_class() != "login") {
+            // session check logic here...change this accordingly
+            if ($this->CI->session->userdata['level'] == 'donatur') {
+                redirect('donatur/dashboard');
+            } elseif ($this->CI->session->userdata['level'] == 'ketua') {
+                redirect('ketua/kegiatan');
+            }
+        }
         $data = [
             'title' => 'SISTEM INFORMASI KEGIATAN DAN PENGELOLAAN KOMUNITAS BENANG PUTIH'
         ];
