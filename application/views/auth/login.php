@@ -1,40 +1,42 @@
 <div class="container mt-5">
+
+<?php $errors = $this->session->flashdata('errors'); ?>
+
+    <?php if (!empty($errors)) : ?>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger text-center">
+                    <?php foreach ($errors as $key => $error) { ?>
+                        <?php echo "$error<br>"; ?>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+
+    <?php elseif ($msg = $this->session->flashdata('error_login')) : ?>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger text-center">
+                    <?= $msg ?>
+                </div>
+            </div>
+        </div>
+
+    <?php elseif ($msg = $this->session->flashdata('success_login')) : ?>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success text-center">
+                    <?= $msg ?>
+                </div>
+            </div>
+        </div>
+
+    <?php endif; ?>
+
     <div class="row justify-content-center">
-        <?php $errors = $this->session->flashdata('errors'); ?>
-
-        <?php if (!empty($errors)) : ?>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="alert alert-danger text-center">
-                        <?php foreach ($errors as $key => $error) { ?>
-                            <?php echo "$error<br>"; ?>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
-
-        <?php elseif ($msg = $this->session->flashdata('error_login')) : ?>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="alert alert-danger text-center">
-                        <?= $msg ?>
-                    </div>
-                </div>
-            </div>
-
-        <?php elseif ($msg = $this->session->flashdata('success_login')) : ?>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="alert alert-success text-center">
-                        <?= $msg ?>
-                    </div>
-                </div>
-            </div>
-
-        <?php endif; ?>
         <div class="col-sm-5">
             <div class="card">
                 <div class="card-header">
