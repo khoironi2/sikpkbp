@@ -10,12 +10,13 @@ class Auth extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'Sistem Informasi Bank Sampah Enviro 18',
+            'title' => 'SISTEM INFORMASI KEGIATAN DAN PENGELOLAAN KOMUNITAS BENANG PUTIH'
         ];
 
-        $this->load->view('templates/auth_header', $data);
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/navbar');
         $this->load->view('auth/login');
-        $this->load->view('templates/auth_footer');
+        $this->load->view('templates/footer');
     }
 
     public function loginForm()
