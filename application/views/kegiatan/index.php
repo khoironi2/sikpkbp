@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Nama Kegiatan</h5>
                     <p class="text-muted">02-02-2020</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="<?= base_url('kegiatan/donasi'); ?>" class="btn btn-primary">Donasi</a>
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Nama Kegiatan</h5>
                     <p class="text-muted">02-02-2020</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="<?= base_url('kegiatan/donasi'); ?>" class="btn btn-primary">Donasi</a>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Nama Kegiatan</h5>
                     <p class="text-muted">02-02-2020</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="<?= base_url('kegiatan/donasi'); ?>" class="btn btn-primary">Donasi</a>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Nama Kegiatan</h5>
                     <p class="text-muted">02-02-2020</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="<?= base_url('kegiatan/donasi'); ?>" class="btn btn-primary">Donasi</a>
                 </div>
             </div>
         </div>
