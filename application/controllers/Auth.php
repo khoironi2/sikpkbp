@@ -82,15 +82,13 @@ class Auth extends CI_Controller
             $errors = $this->form_validation->error_array();
             $this->session->set_flashdata('errors', $errors);
             $this->session->set_flashdata('input', $this->input->post());
-            redirect('/pendaftaran');
+            redirect('/auth');
         } else {
 
             $name = $this->input->post('name');
             $email = $this->input->post('email');
             $password = $this->input->post('password');
             $pass = password_hash($password, PASSWORD_DEFAULT);
-            $rt = $this->input->post('rt_users');
-            $alamat_users = $this->input->post('alamat_users');
             $telepon_users = $this->input->post('telepon_users');
             // $level = $this->input->post('level');
             date_default_timezone_set("ASIA/JAKARTA");
@@ -98,10 +96,8 @@ class Auth extends CI_Controller
                 'name' => $name,
                 'email' => $email,
                 'password' => $pass,
-                'rt_users' => $rt,
-                'alamat_users' => $alamat_users,
                 'telepon_users' => $telepon_users,
-                'level' => 'nasabah',
+                'level' => 'donatur',
                 'time_create_users' => date('Y-m-d H:i:s')
             ];
 
@@ -111,7 +107,7 @@ class Auth extends CI_Controller
             if ($insert) {
 
                 $this->session->set_flashdata('success_login', 'Sukses, Anda telah terdaftar.');
-                redirect('/pendaftaran');
+                redirect('/auth');
             }
         }
     }
