@@ -43,7 +43,7 @@
                     Login
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST">
+                    <form action="<?= base_url('auth/loginForm') ?>" method="POST">
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="text" name="email" class="form-control" id="email">
