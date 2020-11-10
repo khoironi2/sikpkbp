@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-sm-6">
-            <h2>jadwal Kegiatan</h2>
+            <h2>Data Donatur</h2>
         </div>
     </div>
 
@@ -9,25 +9,35 @@
         <div class="col-sm-7">
             <div class="card">
                 <div class="card-header">
-                    form Tambah Kegiatan
+                    Form Tambah Donatur
                 </div>
                 <div class="card-body">
                     <form action="" method="POST">
                         <div class="form-group">
-                            <label for="nama">nama Kegiatan</label>
+                            <label for="nama">Nama</label>
                             <input type="text" name="nama" class="form-control" id="nama">
                         </div>
+
                         <div class="form-group">
-                            <label for="tanggal">Tanggal Pelaksanaan</label>
-                            <input type="date" name="tanggal" class="form-control" id="tanggal">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" class="form-control" id="email">
                         </div>
+
                         <div class="form-group">
-                            <label for="tanggal">Gambar</label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="gambar">
-                                <label class="custom-file-label" for="gambar">Choose file</label>
-                            </div>
+                            <label for="nohp">No. HP</label>
+                            <input type="text" name="nohp" class="form-control" id="nohp">
                         </div>
+
+                        <div class="form-group">
+                            <label for="nominal">Nominal</label>
+                            <input type="text" name="nominal" class="form-control" id="nominal">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="kegiatan">Nama Kegiatan</label>
+                            <input type="text" name="kegiatan" class="form-control" id="kegiatan">
+                        </div>
+
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary">Tambahkan</button>
                         </div>

@@ -1,6 +1,6 @@
 <?php 
 
-class Kegiatan extends CI_Controller
+class Laporan extends CI_Controller
 {
     public function index()
     {
@@ -10,7 +10,7 @@ class Kegiatan extends CI_Controller
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navbar_admin');
-        $this->load->view('admin/kegiatan/index');
+        $this->load->view('admin/laporan/index');
         $this->load->view('templates/footer');
     }
 
@@ -22,19 +22,7 @@ class Kegiatan extends CI_Controller
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navbar_admin');
-        $this->load->view('admin/kegiatan/create');
-        $this->load->view('templates/footer');
-    }
-
-    public function edit()
-    {
-        $data = [
-            'title' => 'SISTEM INFORMASI KEGIATAN DAN PENGELOLAAN KOMUNITAS BENANG PUTIH'
-        ];
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/navbar_admin');
-        $this->load->view('admin/kegiatan/edit');
+        $this->load->view('admin/laporan/create');
         $this->load->view('templates/footer');
     }
 }

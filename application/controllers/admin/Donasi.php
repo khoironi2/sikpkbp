@@ -1,6 +1,6 @@
 <?php 
 
-class Kegiatan extends CI_Controller
+class Donasi extends CI_Controller
 {
     public function index()
     {
@@ -10,7 +10,7 @@ class Kegiatan extends CI_Controller
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navbar_admin');
-        $this->load->view('admin/kegiatan/index');
+        $this->load->view('admin/donasi/index');
         $this->load->view('templates/footer');
     }
 
@@ -22,7 +22,7 @@ class Kegiatan extends CI_Controller
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navbar_admin');
-        $this->load->view('admin/kegiatan/create');
+        $this->load->view('admin/donasi/create');
         $this->load->view('templates/footer');
     }
 
@@ -34,7 +34,7 @@ class Kegiatan extends CI_Controller
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navbar_admin');
-        $this->load->view('admin/kegiatan/edit');
+        $this->load->view('admin/donasi/edit');
         $this->load->view('templates/footer');
     }
 }

@@ -12,6 +12,14 @@
     <link href="<?= base_url('assets') ?>/vendors/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="jumbotron mb-0 mt-0" style="height: 200px;"></div>
+    <div class="jumbotron mb-0 mt-0" style="height: 200px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-6 text-center">
+                    <img width="100" class="img-thumbnail" src="<?= base_url('assets/img/sample/apple.png') ?>" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 
     

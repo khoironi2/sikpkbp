@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-sm-5">
-            <h2>Jadwal Kegiatan</h2>
+            <h2>Data Konfirmasi Donasi</h2>
         </div>
     </div>
 
@@ -15,24 +15,19 @@
                 <thead>
                     <tr>
                     <th scope="col">No.</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Bukti</th>
                     <th scope="col">Nama Kegiatan</th>
-                    <th scope="col">Tanggal</th>
-                    <th scope="col">Foto</th>
-                    <th scope="col">Keterangan</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>
+                        <td>
+                            <img width="50" class="img-thumbnail" src="<?= base_url('assets/img/sample/sample.jpg') ?>" alt="">
+                        </td>
                         <td>Otto</td>
-                        <td>
-                            <img class="img-thumbnail" width="50" src="<?= base_url('assets/img/sample/sample.jpg'); ?>" alt="">
-                        </td>
-                        <td>
-                            <a href="<?= base_url('admin/kegiatan/edit'); ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
-                            <a href="" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                        </td>
                     </tr>
                 </tbody>
             </table>

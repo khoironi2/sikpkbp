@@ -9,7 +9,7 @@
         <div class="col-sm-7">
             <div class="card">
                 <div class="card-header">
-                    form Tambah Kegiatan
+                    form Edit Kegiatan
                 </div>
                 <div class="card-body">
                     <form action="" method="POST">
@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary">Tambahkan</button>
+                            <button type="submit" class="btn btn-primary">Ubah</button>
                         </div>
                     </form>
                 </div>
