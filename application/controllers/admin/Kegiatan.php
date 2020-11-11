@@ -6,6 +6,7 @@ class Kegiatan extends CI_Controller
     {
         $data = [
             'title' => 'SISTEM INFORMASI KEGIATAN DAN PENGELOLAAN KOMUNITAS BENANG PUTIH',
+            'users' => $this->db->get_where('tbl_users', ['email' => $this->session->userdata('email')])->row_array(),
             'kegiatan' => $this->db->get('tbl_kegiatan')->result_array(),
         ];
 
@@ -18,7 +19,8 @@ class Kegiatan extends CI_Controller
     public function create()
     {
         $data = [
-            'title' => 'SISTEM INFORMASI KEGIATAN DAN PENGELOLAAN KOMUNITAS BENANG PUTIH'
+            'title' => 'SISTEM INFORMASI KEGIATAN DAN PENGELOLAAN KOMUNITAS BENANG PUTIH',
+            'users' => $this->db->get_where('tbl_users', ['email' => $this->session->userdata('email')])->row_array(),
         ];
 
         $this->form_validation->set_rules('nama_kegiatan', 'nama kegiatan', 'required');
@@ -92,6 +94,7 @@ class Kegiatan extends CI_Controller
     {
         $data = [
             'title' => 'SISTEM INFORMASI KEGIATAN DAN PENGELOLAAN KOMUNITAS BENANG PUTIH',
+            'users' => $this->db->get_where('tbl_users', ['email' => $this->session->userdata('email')])->row_array(),
             'kegiatan' => $this->db->get_where('tbl_kegiatan', ['id_kegiatan' => $id])->row_array(),
         ];
 
