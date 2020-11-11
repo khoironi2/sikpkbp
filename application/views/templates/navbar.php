@@ -19,6 +19,7 @@
                             <?= $users['name'] ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="<?= base_url('donatur/donasi'); ?>"><?= $users['name'] ?> Donasiku</a>
                             <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>">Logout</a>
                         </div>
                     <?php } ?>
