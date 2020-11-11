@@ -14,7 +14,18 @@
                 <a class="nav-link" href="<?= base_url('admin/donatur'); ?>">Data Donatur</a>
                 <a class="nav-link" href="<?= base_url('admin/konfirmasi'); ?>">Data Konfirmasi</a>
                 <a class="nav-link" href="<?= base_url('admin/donasi'); ?>">Data Donasi</a>
-                <a class="nav-link" href="<?= base_url('auth/logout'); ?>">Logout</a>
+                <li class="nav-item dropdown">
+                    <?php if ($this->session->userdata('id_users') == "") { ?>
+                        <a class="nav-link" href="<?= base_url('auth'); ?>">Login</a>
+                    <?php } else { ?>
+                        <a class="nav-link dropdown-toggle" href="<?= base_url('donatur/donasi') ?>" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?= $users['name'] ?>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>">Logout</a>
+                        </div>
+                    <?php } ?>
+                </li>
             </div>
         </div>
     </div>

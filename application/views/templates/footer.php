@@ -5,9 +5,13 @@
     <script src="<?= base_url('assets/vendors/datatables/dataTables.bootstrap4.min.js'); ?>"></script>
 
     <script>
-        $(document).ready( function () {
+        $(document).ready(function() {
             $('#datatable').DataTable();
         });
     </script>
-</body>
-</html>
+
+
+
+    </body>
+
+    </html>

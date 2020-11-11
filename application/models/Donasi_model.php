@@ -29,7 +29,7 @@ class Donasi_model extends CI_Model
         $this->db->from('tbl_donasi');
         $this->db->join('tbl_kegiatan', 'tbl_kegiatan.id_kegiatan=tbl_donasi.id_kegiatan');
         $this->db->group_by('tbl_kegiatan.id_kegiatan');
-        $this->db->where('validasi_donasi', 'sudah_tranfer');
+        $this->db->where('validasi_donasi !=', 'belum_transfer');
 
         $result = $this->db->get();
 

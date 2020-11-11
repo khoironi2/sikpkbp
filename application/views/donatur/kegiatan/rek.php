@@ -14,7 +14,7 @@
                     <p>a.n Komunitas Benang Putih</p>
                     <p>Terimaksih atas donasi yang anda berikan.</p>
 
-                    <a href="<?= base_url('kegiatan'); ?>" class="btn btn-primary">Konfirmasi Donasi</a>
+                    <a href="<?= base_url('donatur/donasi'); ?>" class="btn btn-primary">Konfirmasi Donasi</a>
                 </div>
             </div>
         </div>
