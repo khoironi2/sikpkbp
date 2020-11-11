@@ -2,6 +2,19 @@
 
 class Donasi_model extends CI_Model
 {
+    public function getAll()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_donasi');
+        $this->db->join('tbl_users', 'tbl_users.id_users=tbl_donasi.id_users');
+        $this->db->join('tbl_kegiatan', 'tbl_kegiatan.id_kegiatan=tbl_donasi.id_kegiatan');
+        // $this->db->where('validasi_donasi', 'sudah_tranfer');
+        $this->db->where('tbl_users.level', 'donatur');
+
+        $result = $this->db->get();
+
+        return $result->result();
+    }
     public function insert($data1)
     {
         $this->db->insert('tbl_donasi', $data1);
@@ -80,5 +93,21 @@ class Donasi_model extends CI_Model
         $result = $this->db->get();
 
         return $result->result();
+    }
+
+    public function getPById($id)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_donasi');
+        $this->db->where('id_donasi', $id);
+
+        $result = $this->db->get();
+
+        return $result->row();
+    }
+    public function updateData($id, $data)
+    {
+        $this->db->where('id_donasi', $id);
+        $this->db->update('tbl_donasi', $data);
     }
 }
