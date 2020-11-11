@@ -39,6 +39,7 @@
                         <th scope="col">Nama Kegiatan</th>
                         <th scope="col">Donasi Terkumpul</th>
                         <th scope="col">Total Donatur</th>
+                        <!-- <th scope="col">Detail Donatur</th> -->
                         <th scope="col">Status</th>
                         <!-- <th scope="col">Aksi</th> -->
                     </tr>
@@ -51,6 +52,7 @@
                             <td><?= $data->nama_kegiatan ?></td>
                             <td>Rp. <?= number_format($data->total, 0, ',', '.') ?></td>
                             <td><?= $data->totaldonatur ?></td>
+                            <!-- <td><a class="badge badge-pill badge-info" data-toggle="modal" data-target="#exampleModal<?= $data->id_kegiatan ?>">Detail</a></td> -->
                             <td>
                                 <?php if ($data->total <= $data->nominal_dana_kegiatan) { ?>
                                     <a style="color: white;" class="badge badge-secondary">
@@ -73,3 +75,31 @@
         </div>
     </div>
 </div>
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<?php foreach ($detaildonatur as $data) : ?>
+    <div class="modal fade" id="exampleModal<?= $data->id_kegiatan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><?= $data->nama_kegiatan ?></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><?= $data->name ?></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach ?>

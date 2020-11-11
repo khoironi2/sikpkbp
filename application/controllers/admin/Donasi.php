@@ -8,7 +8,8 @@ class Donasi extends CI_Controller
             'title' => 'SISTEM INFORMASI KEGIATAN DAN PENGELOLAAN KOMUNITAS BENANG PUTIH',
             'users' => $this->db->get_where('tbl_users', ['email' => $this->session->userdata('email')])->row_array(),
             'alldonasi' => $this->Donasi_model->getTotalDonaturKegiatan(),
-            'totaldonasi' => $this->Donasi_model->getTotaldonasi()
+            'totaldonasi' => $this->Donasi_model->getTotaldonasi(),
+            'detaildonatur' => $this->Donasi_model->getDetaildonatur()
         ];
 
         $this->load->view('templates/header', $data);
