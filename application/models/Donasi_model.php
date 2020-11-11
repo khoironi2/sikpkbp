@@ -100,7 +100,7 @@ class Donasi_model extends CI_Model
         $this->db->from('tbl_donasi');
         $this->db->join('tbl_users', 'tbl_users.id_users=tbl_donasi.id_users');
         $this->db->join('tbl_kegiatan', 'tbl_kegiatan.id_kegiatan=tbl_donasi.id_kegiatan');
-        $this->db->group_by('tbl_kegiatan.id_kegiatan');
+        $this->db->group_by('tbl_users.id_users');
         $this->db->where('validasi_donasi !=', 'belum_transfer');
         $result = $this->db->get();
 
