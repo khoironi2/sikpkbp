@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Kegiatan extends CI_Controller
 {
@@ -33,6 +33,8 @@ class Kegiatan extends CI_Controller
         } else {
             $data = [
                 'nama_kegiatan' => $this->input->post('nama_kegiatan'),
+                'nominal_dana_kegiatan' => $this->input->post('nominal_dana_kegiatan'),
+                'status_kegiatan' => 'belum_aktif',
                 'time_pelakasanaan_kegiatan' => $this->input->post('time_pelakasanaan_kegiatan'),
             ];
 
@@ -55,6 +57,35 @@ class Kegiatan extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Kegiatan Berhasil Ditambahkan</div>');
             redirect('admin/kegiatan');
         }
+    }
+    public function updateStatusW($id)
+    {
+        $client = $this->Kegiatan_model->getPById($id);
+        $status_client = "";
+
+        if ($client->status_kegiatan == "belum_aktif") {
+            $status_client = "aktif";
+        } else {
+            $status_client = "aktif";
+        }
+
+        $data = array(
+            'id_kegiatan'         => $id,
+            'status_kegiatan'     => $status_client
+        );
+        $data1 = array(
+            'nominal_donasi' => '1000',
+            'validasi_donasi' => 'sudah_tranfer',
+            'time_create_donasi' => date('Y-m-d H:i:s'),
+            'time_update_donasi' => date('Y-m-d H:i:s'),
+            'id_kegiatan' => $id,
+            'created_by' => $this->session->userdata('id_users')
+        );
+
+        $this->Kegiatan_model->updateData($id, $data);
+        $this->Donasi_model->insert($data1);
+
+        redirect(site_url('admin/kegiatan'));
     }
 
     public function edit($id)

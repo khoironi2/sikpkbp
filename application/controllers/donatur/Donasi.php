@@ -1,6 +1,6 @@
 <?php
 
-class Kegiatan extends CI_Controller
+class Donasi extends CI_Controller
 {
     public function __construct()
     {
@@ -13,8 +13,8 @@ class Kegiatan extends CI_Controller
     {
         if ($this->CI->router->fetch_class() != "login") {
             // session check logic here...change this accordingly
-            if ($this->CI->session->userdata['level'] == 'donatur') {
-                redirect('donatur/donasi');
+            if ($this->CI->session->userdata['level'] == 'ketua') {
+                redirect('ketua/kegiatan');
             } elseif ($this->CI->session->userdata['level'] == 'admin') {
                 redirect('admin/dashboard');
             }
@@ -24,8 +24,8 @@ class Kegiatan extends CI_Controller
         ];
 
         $this->load->view('templates/header', $data);
-        $this->load->view('templates/navbar_ketua');
-        $this->load->view('ketua/kegiatan/index');
+        $this->load->view('templates/navbar_donatur');
+        $this->load->view('ketua/donasi/index');
         $this->load->view('templates/footer');
     }
 }

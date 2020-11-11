@@ -13,7 +13,7 @@ class Dashboard extends CI_Controller
         if ($this->CI->router->fetch_class() != "login") {
             // session check logic here...change this accordingly
             if ($this->CI->session->userdata['level'] == 'donatur') {
-                redirect('donatur/dashboard');
+                redirect('donatur/kegiatan');
             } elseif ($this->CI->session->userdata['level'] == 'ketua') {
                 redirect('ketua/kegiatan');
             }
