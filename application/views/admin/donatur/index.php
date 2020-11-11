@@ -11,6 +11,7 @@
 
     <div class="row mt-4 mb-5 justify-content-center">
         <div class="col-sm-9">
+            <?= $this->session->flashdata('message'); ?>
             <table class="table table-striped" id="datatable">
                 <thead>
                     <tr>
@@ -18,19 +19,18 @@
                         <th scope="col">Nama Donatur</th>
                         <th scope="col">Email</th>
                         <th scope="col">No Hp</th>
-                        <th scope="col">Nominal</th>
-                        <th scope="col">Nama Kegiatan</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>OK</td>
-                        <td>OK</td>
-                        <td>OK</td>
-                    </tr>
+                    <?php $no = 1; ?>
+                    <?php foreach ($donatur as $data) : ?>
+                        <tr>
+                            <th scope="row"><?= $no++; ?></th>
+                            <td><?= $data['name']; ?></td>
+                            <td><?= $data['email']; ?></td>
+                            <td><?= $data['telepon_users']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
