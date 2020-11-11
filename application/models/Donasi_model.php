@@ -48,11 +48,48 @@ class Donasi_model extends CI_Model
 
         return $result->result();
     }
-    public function getTotalPenjualan()
+    public function getTotalDonaturKegiatan()
     {
-        $this->db->select('sum(tbl_penjualan.total_penjualan) as total');
-        $this->db->from('tbl_penjualan');
+        $this->db->select('tbl_kegiatan.id_kegiatan,tbl_kegiatan.gambar_kegiatan,tbl_kegiatan.nama_kegiatan,tbl_kegiatan.nominal_dana_kegiatan,tbl_kegiatan.time_pelakasanaan_kegiatan,sum(tbl_donasi.nominal_donasi) as total,count(tbl_donasi.id_users) as totaldonatur');
+        $this->db->from('tbl_donasi');
+        $this->db->join('tbl_kegiatan', 'tbl_kegiatan.id_kegiatan=tbl_donasi.id_kegiatan');
+        $this->db->group_by('tbl_kegiatan.id_kegiatan');
+        $this->db->where('validasi_donasi !=', 'belum_transfer');
 
+        $result = $this->db->get();
+
+        return $result->result();
+    }
+    public function getTotalDonaturKegiatanBydate($keyword1, $keyword2)
+    {
+        $this->db->select('tbl_kegiatan.id_kegiatan,tbl_kegiatan.gambar_kegiatan,tbl_kegiatan.nama_kegiatan,tbl_kegiatan.nominal_dana_kegiatan,tbl_kegiatan.time_pelakasanaan_kegiatan,sum(tbl_donasi.nominal_donasi) as total,count(tbl_donasi.id_users) as totaldonatur');
+        $this->db->from('tbl_donasi');
+        $this->db->join('tbl_kegiatan', 'tbl_kegiatan.id_kegiatan=tbl_donasi.id_kegiatan');
+        $this->db->group_by('tbl_kegiatan.id_kegiatan');
+        $this->db->where('validasi_donasi !=', 'belum_transfer');
+        $this->db->where('time_create_donasi >=', $keyword1);
+        $this->db->where('time_create_donasi <=', $keyword2);
+
+        $result = $this->db->get();
+
+        return $result->result();
+    }
+    public function getTotaldonasiBydate($keyword1, $keyword2)
+    {
+        $this->db->select('sum(tbl_donasi.nominal_donasi) as total');
+        $this->db->from('tbl_donasi');
+        $this->db->where('validasi_donasi !=', 'belum_transfer');
+        $this->db->where('time_create_donasi >=', $keyword1);
+        $this->db->where('time_create_donasi <=', $keyword2);
+        $result = $this->db->get();
+
+        return $result->result();
+    }
+    public function getTotaldonasi()
+    {
+        $this->db->select('sum(tbl_donasi.nominal_donasi) as total');
+        $this->db->from('tbl_donasi');
+        $this->db->where('validasi_donasi !=', 'belum_transfer');
         $result = $this->db->get();
 
         return $result->result();
