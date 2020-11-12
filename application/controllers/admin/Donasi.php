@@ -44,7 +44,7 @@ class Donasi extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function laporan_keuangan_pdf()
+    public function laporan_donasi_pdf()
     {
         $this->load->library('dompdf_gen');
 

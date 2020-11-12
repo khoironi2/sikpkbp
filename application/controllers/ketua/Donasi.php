@@ -7,11 +7,41 @@ class Donasi extends CI_Controller
         $data = [
             'title' => 'SISTEM INFORMASI KEGIATAN DAN PENGELOLAAN KOMUNITAS BENANG PUTIH',
             'users' => $this->db->get_where('tbl_users', ['email' => $this->session->userdata('email')])->row_array(),
+            'alldonasi' => $this->Donasi_model->getTotalDonaturKegiatan(),
+            'totaldonasi' => $this->Donasi_model->getTotaldonasi(),
+            'detaildonatur' => $this->Donasi_model->getDetaildonatur()
         ];
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navbar_ketua');
         $this->load->view('ketua/donasi/index');
         $this->load->view('templates/footer');
+    }
+
+    public function laporan_donasi_pdf()
+    {
+        $this->load->library('dompdf_gen');
+
+        $keyword1 = $this->input->post('keyword1');
+        $keyword2 = $this->input->post('keyword2');
+        $data = [
+            'awal' =>  $keyword1,
+            'akhir' => $keyword2,
+            'totalpenjualan' => $this->Donasi_model->getTotaldonasiBydate($keyword1, $keyword2),
+            // 'totalpenjualan' => $this->Penjualan_model->getTotalPenjualan(),
+            'logo' => '<img src="assets/img/sample/apple.png" alt="" class="mr-3" height="50">',
+            'gambar' => 'assets/img/perbaikan/'
+        ];
+        $data['nasabah'] = $this->Donasi_model->getTotalDonaturKegiatanBydate($keyword1, $keyword2);
+        $this->load->view('ketua/donasi/laporan/pdf/Donasi', $data);
+
+        $paper_size = 'A4';
+        $orientation = 'landscape';
+        $html = $this->output->get_output();
+        $this->dompdf->set_paper($paper_size, $orientation);
+
+        $this->dompdf->load_html($html);
+        $this->dompdf->render();
+        $this->dompdf->stream("laporan_data_donasi.pdf", ['Attachment' => 0]);
     }
 }

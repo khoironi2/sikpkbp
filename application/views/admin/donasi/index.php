@@ -15,7 +15,7 @@
 
     <div class="container mb-0">
         <div class="row justify-content-center">
-            <form action="<?= base_url('admin/donasi/laporan_keuangan_pdf'); ?>" method="POST" class="form-inline">
+            <form action="<?= base_url('admin/donasi/laporan_donasi_pdf'); ?>" method="POST" class="form-inline">
                 <div class="form-group mb-2">
                     <label for="dari">Dari </label>
                     <input type="datetime-local" class="form-control ml-2" id="dari" name="keyword1">
