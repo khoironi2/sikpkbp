@@ -10,11 +10,11 @@ class Users_model extends CI_model
 
         return $result->result();
     }
-    public function getAllUsersNasabah()
+    public function getAllUsersDonatur()
     {
         $this->db->select('*');
         $this->db->from('tbl_users');
-        $this->db->where('level', 'nasabah');
+        $this->db->where('level', 'donatur');
         $result = $this->db->get();
 
         return $result->result();

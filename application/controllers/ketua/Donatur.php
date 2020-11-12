@@ -7,6 +7,7 @@ class Donatur extends CI_Controller
         $data = [
             'title' => 'SISTEM INFORMASI KEGIATAN DAN PENGELOLAAN KOMUNITAS BENANG PUTIH',
             'users' => $this->db->get_where('tbl_users', ['email' => $this->session->userdata('email')])->row_array(),
+            'donatur' => $this->Users_model->getAllUsersDonatur()
         ];
 
         $this->load->view('templates/header', $data);

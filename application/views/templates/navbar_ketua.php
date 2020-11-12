@@ -14,11 +14,28 @@
                 <li class="nav-item dropdown">
                     <?php if ($this->session->userdata('id_users') == "") { ?>
                         <a class="nav-link" href="<?= base_url('auth'); ?>">Login</a>
-                    <?php } else { ?>
-                        <a class="nav-link dropdown-toggle" href="<?= base_url('donatur/donasi') ?>" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php } elseif ($this->session->userdata('level') == "admin") { ?>
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $users['name'] ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="<?= base_url('admin/profile'); ?>"><?= $users['name'] ?> Profile</a>
+                            <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>">Logout</a>
+                        </div>
+                    <?php } elseif ($this->session->userdata('level') == "ketua") { ?>
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?= $users['name'] ?>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="<?= base_url('ketua/profile'); ?>"><?= $users['name'] ?> Profile</a>
+                            <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>">Logout</a>
+                        </div>
+                    <?php } elseif ($this->session->userdata('level') == "donatur") { ?>
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?= $users['name'] ?>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="<?= base_url('donatur/profile'); ?>"><?= $users['name'] ?> Profile</a>
                             <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>">Logout</a>
                         </div>
                     <?php } ?>

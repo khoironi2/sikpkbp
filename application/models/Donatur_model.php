@@ -2,6 +2,7 @@
 
 class Donatur_model extends CI_Model
 {
+
     public function insert($data1)
     {
         $this->db->insert('tbl_donasi', $data1);

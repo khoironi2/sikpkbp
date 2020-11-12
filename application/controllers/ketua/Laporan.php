@@ -7,6 +7,7 @@ class Laporan extends CI_Controller
         $data = [
             'title' => 'SISTEM INFORMASI KEGIATAN DAN PENGELOLAAN KOMUNITAS BENANG PUTIH',
             'users' => $this->db->get_where('tbl_users', ['email' => $this->session->userdata('email')])->row_array(),
+            'laporan' => $this->db->get('tbl_laporan_donasi')->result_array()
         ];
 
         $this->load->view('templates/header', $data);

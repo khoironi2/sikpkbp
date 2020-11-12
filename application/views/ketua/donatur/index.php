@@ -17,12 +17,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>OK</td>
-                    </tr>
+                    <?php $no = 1;
+                    foreach ($donatur as $data) : ?>
+                        <tr>
+                            <th scope="row"><?= $no++ ?></th>
+                            <td><?= $data->name ?></td>
+                            <td><?= $data->email ?></td>
+                            <td><?= $data->telepon_users ?></td>
+                        </tr>
+                    <?php endforeach ?>
                 </tbody>
             </table>
         </div>

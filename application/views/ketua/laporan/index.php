@@ -4,27 +4,27 @@
             <h2>Laporan Donasi</h2>
         </div>
     </div>
+    <?= $this->session->flashdata('message'); ?>
 
     <div class="row mb-5">
-        <div class="col-sm-2 mt-4">
-            <img class="img-thumbnail" src="<?= base_url('assets/img/sample/image-file.png') ?>" alt="">
-            <h5 class="mt-2">Nama File</h5>
-        </div>
-        <div class="col-sm-2 mt-4">
-            <img class="img-thumbnail" src="<?= base_url('assets/img/sample/image-file.png') ?>" alt="">
-            <h5 class="mt-2">Nama File</h5>
-        </div>
-        <div class="col-sm-2 mt-4">
-            <img class="img-thumbnail" src="<?= base_url('assets/img/sample/image-file.png') ?>" alt="">
-            <h5 class="mt-2">Nama File</h5>
-        </div>
-        <div class="col-sm-2 mt-4">
-            <img class="img-thumbnail" src="<?= base_url('assets/img/sample/image-file.png') ?>" alt="">
-            <h5 class="mt-2">Nama File</h5>
-        </div>
-        <div class="col-sm-2 mt-4">
-            <img class="img-thumbnail" src="<?= base_url('assets/img/sample/image-file.png') ?>" alt="">
-            <h5 class="mt-2">Nama File</h5>
-        </div>
+        <?php foreach ($laporan as $data) : ?>
+            <!-- <div class="col-sm-2 mt-4">
+                <img class="img-thumbnail" src="<?= base_url('assets/img/sample/image-file.png') ?>" alt="">
+                <h5 class="mt-2">
+                    <a target="_blank" href="<?= base_url('assets/laporan/' . $data['file_laporan_donasi']); ?>" style="text-decoration: none;" class="text-dark"><?= $data['nama_file']; ?></a>
+                </h5>
+            </div> -->
+
+            <div class="col-sm-3 mt-4">
+                <div class="card">
+                    <img height="200" src="<?= base_url('assets/img/sample/image-file.png') ?>" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h4>
+                            <a target="_blank" href="<?= base_url('assets/laporan/' . $data['file_laporan_donasi']); ?>" style="text-decoration: none;" class="text-dark"><?= $data['nama_file']; ?></a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </div>
