@@ -35,7 +35,7 @@ class Profile extends CI_Controller
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates/header', $data);
-            $this->load->view('templates/navbar_ketua');
+            $this->load->view('templates/navbar_admin');
             $this->load->view('admin/profile/index');
             $this->load->view('templates/footer');
         } else {
