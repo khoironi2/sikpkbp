@@ -24,18 +24,14 @@ class Profile extends CI_Controller
             'users' => $this->db->get_where('tbl_users', ['email' => $this->session->userdata('email')])->row_array()
         ];
 
-
         $old_image = $data["users"]["gambar_users"];
         $this->form_validation->set_rules('name', 'nama', 'required');
-        $this->form_validation->set_rules('email', 'email', 'required');
-        $this->form_validation->set_rules('alamat_users', 'alamat', 'required');
-        $this->form_validation->set_rules('telepon_users', 'telepon', 'required');
-
-
+        // $this->form_validation->set_rules('email', 'email', 'required');
+        // $this->form_validation->set_rules('telepon_users', 'telepon', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates/header', $data);
-            $this->load->view('templates/navbar_ketua');
+            $this->load->view('templates/navbar_admin');
             $this->load->view('admin/profile/index');
             $this->load->view('templates/footer');
         } else {
@@ -43,7 +39,6 @@ class Profile extends CI_Controller
             $data = [
                 'name' => $this->input->post('name'),
                 'email' => $this->input->post('email'),
-                'alamat_users' => $this->input->post('alamat_users'),
                 'telepon_users' => $this->input->post('telepon_users'),
             ];
 
