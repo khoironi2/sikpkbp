@@ -14,7 +14,7 @@
                 <a class="nav-link" href="<?= base_url('admin/donatur'); ?>">Data Donatur</a>
                 <a class="nav-link" href="<?= base_url('admin/konfirmasi'); ?>">Data Konfirmasi</a>
                 <a class="nav-link" href="<?= base_url('admin/donasi'); ?>">Data Donasi</a>
-                <a class="nav-link" href="<?= base_url('admin/settings'); ?>">Settings</a>
+                <!-- <a class="nav-link" href="<?= base_url('admin/settings'); ?>">Settings</a> -->
                 <li class="nav-item dropdown">
                     <?php if ($this->session->userdata('id_users') == "") { ?>
                         <a class="nav-link" href="<?= base_url('auth'); ?>">Login</a>
