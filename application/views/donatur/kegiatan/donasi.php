@@ -38,7 +38,7 @@
 
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary"> Lanjutkan</button>
-                            <a href="<?= base_url('donatur/kegiatan/rek'); ?>" class="btn btn-primary">Lanjutkan</a>
+                            <!-- <a href="<?= base_url('donatur/kegiatan/rek'); ?>" class="btn btn-primary">Lanjutkan</a> -->
                         </div>
                     </form>
                 </div>
