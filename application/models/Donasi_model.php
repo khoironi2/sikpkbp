@@ -38,7 +38,10 @@ class Donasi_model extends CI_Model
 
     public function getTotalDonasiKegiatan()
     {
-        $this->db->select('tbl_kegiatan.id_kegiatan,tbl_kegiatan.gambar_kegiatan,tbl_kegiatan.nama_kegiatan,tbl_kegiatan.nominal_dana_kegiatan,tbl_kegiatan.time_pelakasanaan_kegiatan,sum(tbl_donasi.nominal_donasi) as total');
+        $this->db->select('tbl_kegiatan.id_kegiatan,tbl_kegiatan.gambar_kegiatan,tbl_kegiatan.nama_kegiatan,tbl_kegiatan.nominal_dana_kegiatan,tbl_kegiatan.time_pelakasanaan_kegiatan,sum(tbl_donasi.nominal_donasi) as total,
+        tbl_kegiatan.bulan,
+        tbl_kegiatan.hari,
+        tbl_kegiatan.tahun');
         $this->db->from('tbl_donasi');
         $this->db->join('tbl_kegiatan', 'tbl_kegiatan.id_kegiatan=tbl_donasi.id_kegiatan');
         $this->db->group_by('tbl_kegiatan.id_kegiatan');

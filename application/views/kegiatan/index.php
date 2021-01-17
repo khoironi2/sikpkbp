@@ -28,6 +28,15 @@
                                 </a>
                             <?php } ?>
                         </div>
+                        <br>
+                        <?php
+                        // $day    = 19;
+                        // $month    = 1;
+                        // $year    = 2021;
+
+                        $days    = (int)((mktime(0, 0, 0, $data->bulan, $data->hari, $data->tahun) - time()) / 86400);
+                        echo "Masih ada <b>$days</b> hari lagi, sampai tanggal $data->hari/$data->bulan/$data->tahun";
+                        ?>
                         <!-- <a href="<?= base_url('donatur/kegiatan/donasi'); ?>" class="btn btn-primary">Donasi</a> -->
                     </div>
                 </div>

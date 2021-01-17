@@ -38,6 +38,9 @@ class Kegiatan extends CI_Controller
                 'nominal_dana_kegiatan' => $this->input->post('nominal_dana_kegiatan'),
                 'status_kegiatan' => 'belum_aktif',
                 'time_pelakasanaan_kegiatan' => $this->input->post('time_pelakasanaan_kegiatan'),
+                'hari' => $this->input->post('hari'),
+                'bulan' => $this->input->post('bulan'),
+                'tahun' => $this->input->post('tahun')
             ];
 
             $upload_image = $_FILES['gambar_kegiatan']['name'];
