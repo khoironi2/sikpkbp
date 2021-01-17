@@ -11,6 +11,7 @@
                 <a class="nav-link" href="<?= base_url('admin/kegiatan'); ?>">Kegiatan</a>
                 <a class="nav-link" href="<?= base_url('admin/dokumentasi'); ?>">Dokumentasi</a>
                 <a class="nav-link" href="<?= base_url('admin/laporan'); ?>">Laporan Donasi</a>
+                <a class="nav-link" href="<?= base_url('admin/laporan_donasi_terpakai'); ?>">Laporan Donasi Terpakai</a>
                 <a class="nav-link" href="<?= base_url('admin/donatur'); ?>">Data Donatur</a>
                 <a class="nav-link" href="<?= base_url('admin/konfirmasi'); ?>">Data Konfirmasi</a>
                 <a class="nav-link" href="<?= base_url('admin/donasi'); ?>">Data Donasi</a>
