@@ -23,7 +23,7 @@
                     <img height="200" src="<?= base_url('assets/img/sample/image-file.png') ?>" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h4>
-                            <a target="_blank" href="<?= base_url('assets/laporan/' . $data['file_laporan_donasi_terpakai']); ?>" style="text-decoration: none;" class="text-dark"><?= $data['nama_file']; ?></a>
+                            <a target="_blank" href="<?= base_url('assets/laporan/terpakai/' . $data['file_laporan_donasi_terpakai']); ?>" style="text-decoration: none;" class="text-dark"><?= $data['nama_file']; ?></a>
                         </h4>
                         <a onclick="return confirm('Data laporan akan terhapus');" href="<?= base_url('admin/laporan_donasi_terpakai/destroy/' . $data['id_laporan_donasi_terpakai']); ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                     </div>
