@@ -9,6 +9,7 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="<?= base_url('ketua/kegiatan'); ?>">Kegiatan</a>
                 <a class="nav-link" href="<?= base_url('ketua/laporan'); ?>">Laporan Donasi</a>
+                <a class="nav-link" href="<?= base_url('ketua/laporan_donasi_terpakai'); ?>">Laporan Donasi Terpakai</a>
                 <a class="nav-link" href="<?= base_url('ketua/donatur'); ?>">Data Donatur</a>
                 <a class="nav-link" href="<?= base_url('ketua/donasi'); ?>">Data Donasi</a>
                 <li class="nav-item dropdown">

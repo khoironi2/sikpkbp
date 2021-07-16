@@ -9,6 +9,8 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="<?= base_url('donatur/kegiatan'); ?>">Kegiatan</a>
                 <a class="nav-link" href="<?= base_url('donatur/donasi'); ?>">Donasi Saya</a>
+                <a class="nav-link" href="<?= base_url('donatur/laporan'); ?>">Laporan Donasi</a>
+                <a class="nav-link" href="<?= base_url('donatur/laporan_donasi_terpakai'); ?>">Laporan Donasi Terpakai</a>
                 <li class="nav-item dropdown">
                     <?php if ($this->session->userdata('id_users') == "") { ?>
                         <a class="nav-link" href="<?= base_url('auth'); ?>">Login</a>
