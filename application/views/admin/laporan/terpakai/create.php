@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-sm-6">
-            <h2>Laporan Donasi Terpakai</h2>
+            <h2>Distribusi Donasi</h2>
         </div>
     </div>
 
@@ -9,7 +9,7 @@
         <div class="col-sm-7">
             <div class="card">
                 <div class="card-header">
-                    Laporan Donasi Terpakai
+                    Distribusi Donasi
                 </div>
                 <div class="card-body">
                     <form action="<?= base_url('admin/Laporan_donasi_terpakai/create'); ?>" method="POST" enctype="multipart/form-data">

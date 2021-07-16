@@ -5,7 +5,6 @@
         </div>
     </div>
 
-    <a href="<?= base_url('admin/Laporan_donasi_terpakai/create'); ?>" class="btn btn-primary mb-3 mt-3">Tambahkan</a>
 
     <?= $this->session->flashdata('message'); ?>
 
